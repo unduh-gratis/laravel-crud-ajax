@@ -101,12 +101,12 @@
                     type: 'POST',
                     data: data,
                     dataType:"json",
-                    success: (res) => {
+                    success: () => {
                         $('#crudModal').modal('hide');
                         tampil();
                     },
                     complete:()=>{
-                        $('#crudModal').modal('hide');
+                        $("#form-biodata")[0].reset();
                     },
                     error: () => {
                         alert('Gagal tambah data');
@@ -118,12 +118,12 @@
                     type: 'POST',
                     data: data,
                     dataType:"json",
-                    success: (res) => {
+                    success: () => {
                         $('#crudModal').modal('hide');
                         tampil();
                     },
                     complete:()=>{
-                        $('#crudModal').modal('hide');
+                        $("#form-biodata")[0].reset();
                     },
                     error: () => {
                         alert('Gagal ubah data');
