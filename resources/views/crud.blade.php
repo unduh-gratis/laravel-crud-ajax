@@ -63,6 +63,17 @@
                 @endforeach
               </select>
             </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              @foreach ($data_gender as $key => $gender)
+              <div class="form-check">
+                  <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="gender" id="" value="{{ $key }}" @checked(true)>
+                  {{ $gender }}
+                </label>
+              </div>
+              @endforeach
+            </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -165,6 +176,9 @@
                     $('#telp').val(res.telp);
                     $('#pendidikan').val(res.pendidikan);
                     $('#idnya').val(res.id);
+                    $('input[name="gender"]').filter(function() {
+                        return $(this).val() == res.gender;
+                    }).prop('checked', true);
                 },
                 error: ()=> {
                     alert('Lakukan "php artisan migrate" terlebih dahulu');

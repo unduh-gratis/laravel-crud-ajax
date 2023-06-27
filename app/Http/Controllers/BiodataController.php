@@ -10,6 +10,7 @@ class BiodataController extends Controller
     public function index()
     {
         $data['data_pendidikan'] = ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+        $data['data_gender'] = ['L' => 'Laki-laki', 'P' => 'Perempuan'];
         return view('crud', $data);
     }
 
@@ -27,6 +28,7 @@ class BiodataController extends Controller
         $data->alamat = $request->alamat;
         $data->telp = $request->telp;
         $data->pendidikan = $request->pendidikan;
+        $data->gender = $request->gender;
         $data->save();
         return response()->json($data, 200);
     }
