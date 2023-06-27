@@ -54,6 +54,15 @@
                 <label for="telp">No.Telepon*</label>
                 <input type="text" class="form-control" name="telp" id="telp" autocomplete="off" required>
             </div>
+            <div class="form-group">
+              <label for="pendidikan">Pendidikan Terakhir</label>
+              <select class="form-control" name="pendidikan" id="pendidikan" required>
+                <option value="">Pilih...</option>
+                @foreach ($data_pendidikan as $pendidikan)
+                <option value="{{ $pendidikan }}">{{ $pendidikan }}</option>
+                @endforeach
+              </select>
+            </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -89,6 +98,11 @@
             $('#crudModalLabel').html('Tambah Data');
             $('button.btn-primary').html('Simpan Data');
             $('#metode').val('tambah');
+            $('#nama').val('');
+            $('#username').val('');
+            $('#alamat').val('');
+            $('#telp').val('');
+            $('#pendidikan').val('');
         });
 
         $('button.btn-primary').click(()=>{
@@ -149,6 +163,7 @@
                     $('#username').val(res.username);
                     $('#alamat').val(res.alamat);
                     $('#telp').val(res.telp);
+                    $('#pendidikan').val(res.pendidikan);
                     $('#idnya').val(res.id);
                 },
                 error: ()=> {

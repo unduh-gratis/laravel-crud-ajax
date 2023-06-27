@@ -9,7 +9,8 @@ class BiodataController extends Controller
 {
     public function index()
     {
-        return view('crud');
+        $data['data_pendidikan'] = ['SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'S1', 'S2', 'S3'];
+        return view('crud', $data);
     }
 
     public function tampil()
@@ -25,6 +26,7 @@ class BiodataController extends Controller
         $data->username = $request->username;
         $data->alamat = $request->alamat;
         $data->telp = $request->telp;
+        $data->pendidikan = $request->pendidikan;
         $data->save();
         return response()->json($data, 200);
     }
@@ -36,6 +38,7 @@ class BiodataController extends Controller
         $data->username = $request->username;
         $data->alamat = $request->alamat;
         $data->telp = $request->telp;
+        $data->pendidikan = $request->pendidikan;
         $data->save();
         return response()->json($data, 200);
     }

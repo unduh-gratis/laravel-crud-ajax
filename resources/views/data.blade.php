@@ -6,6 +6,7 @@
             <th scope="col">Username</th>
             <th scope="col">Alamat</th>
             <th scope="col">Telepon</th>
+            <th scope="col">Pendidikan Terakhir</th>
             <th scope="col">Aksi</th>
         </tr>
     </thead>
@@ -17,6 +18,7 @@
             <td>{{ $d->username }}</td>
             <td>{{ $d->alamat }}</td>
             <td>{{ $d->telp }}</td>
+            <td>{{ $d->pendidikan }}</td>
             <td>
                 <a class="btn btn-primary btn-sm" href="javascript:;" role="button" onclick="ubah({{ $d->id }})" data-toggle="modal" data-target="#crudModal">Edit</a>
                 <a class="btn btn-danger btn-sm" href="javascript:;" role="button" onclick="hapus({{ $d->id }})">Delete</a>
