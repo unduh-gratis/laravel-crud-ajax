@@ -74,6 +74,17 @@
               </div>
               @endforeach
             </div>
+            <div class="form-group">
+              <label for="hobi">Hobi</label>
+              @foreach ($data_hobi as $hobi)
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="hobi[]" id="hobi" value="{{ $hobi }}">
+                    {{ $hobi }}
+                  </label>
+                </div>
+              @endforeach
+            </div>
         </form>
       </div>
       <div class="modal-footer">

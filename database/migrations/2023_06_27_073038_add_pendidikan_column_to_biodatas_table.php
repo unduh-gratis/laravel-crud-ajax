@@ -15,6 +15,7 @@ return new class extends Migration
             $table->after('telp', function (Blueprint $table) {
                 $table->string('pendidikan', 3);
                 $table->char('gender', 1);
+                $table->json('hobi');
             });
         });
     }
@@ -25,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('biodatas', function (Blueprint $table) {
-            $table->dropColumn(['pendidikan', 'gender']);
+            $table->dropColumn(['pendidikan', 'gender', 'hobi']);
         });
     }
 };
